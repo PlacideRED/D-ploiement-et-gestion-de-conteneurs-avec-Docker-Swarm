@@ -1,0 +1,11 @@
+---
+#Choix du maitre principal et initialisation du cluster 
+- hosts: swarm-maitre-1
+  become: true
+
+  tasks:
+    - name: Initialize the cluster
+      shell: docker swarm init --advertise-addr 192.168.76.3 >> cluster_initialized.txt
+      args:
+        chdir: $HOME
+        creates: cluster_initialized.txt

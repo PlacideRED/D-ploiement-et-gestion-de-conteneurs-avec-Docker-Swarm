@@ -1,0 +1,6 @@
+---
+PACKAGES:
+  - nano
+  - htop
+  - tmux
+  - docker-ce
