@@ -22,7 +22,7 @@
 -- connaissance moyenne en developpement d'applicaton
 
 
-+++++Installation
++++++Installation+++++++++++++++++++++
 
 -- Avoir une machine avec linux avec au moins 8 GO de RAM
 
@@ -54,15 +54,15 @@ Fichier utile pour la mise à jour système de vagrant et ansible
 ++ les playbooks de Ansible 
 cluster.yml code pour initialiser le cluster de façon automatique 
 
-master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
+++ master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
 
-join.yml code pour intégré le cluster 
+++ join.yml code pour intégré le cluster 
 
-hosts.yml nos quatres machines virtuelles 
+++ hosts.yml nos quatres machines virtuelles 
 
-vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
+++ vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
 
-++ ReadMe
+++++++ReadMe
 Fichier conteant les différents informations sur les fichiers
  
 
@@ -73,7 +73,6 @@ Après le clonage du git on exécute les commandes suivantes :
 Première étape:
 
  Ajouter le box des machines virtuelles de vagrant 
- 
  
  
 $ vagrant box add bento/ubuntu-20.04 --provider virtualbox
@@ -87,9 +86,10 @@ commande exécute le Vagrantfile , qui à son tour  installe Ansible et exécute
 Tout cela prendra quelques minutes. Finalement, notre Docker Swarm Cluster sera configuré et prêt à être utilisé. 
 
 
-
 $ cd swarm-vagrant-ansible
+
 $ cd Vagrant
+
 $ vagrant up
 
 Troisième étape:
