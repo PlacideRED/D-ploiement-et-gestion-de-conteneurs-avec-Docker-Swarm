@@ -66,7 +66,7 @@ cluster.yml code pour initialiser le cluster de façon automatique
 Fichier conteant les différents informations sur les fichiers
  
 
-++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++
 EXECUTION DES COMMANDES 
 Après le clonage du git on exécute les commandes suivantes :
 
