@@ -10,10 +10,15 @@
 +++++Pré-réquis : 
 
 -- connaissance moyenne en réseau IP
+
 -- connaissance moyenne en administration système
+
 -- Bonne connaissance en technologies DevSecOps
+
 -- Bonne connaissance en Bash 
+
 -- Bonne connaissance en ruby
+
 -- connaissance moyenne en developpement d'applicaton
 
 
@@ -78,6 +83,7 @@ $ vagrant box add bento/ubuntu-20.04 --provider virtualbox
 Deuxième étape: 
 Lancer Vagrant pour automatiser votre deploiement, il faut noter que Cette 
 commande exécute le Vagrantfile , qui à son tour  installe Ansible et exécute les playbooks.
+
 Tout cela prendra quelques minutes. Finalement, notre Docker Swarm Cluster sera configuré et prêt à être utilisé. 
 
 
