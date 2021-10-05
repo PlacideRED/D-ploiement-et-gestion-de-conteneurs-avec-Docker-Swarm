@@ -28,8 +28,11 @@ https://www.informatiweb.net/tutoriels/informatique/virtualisation/virtualbox-in
 https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
 
 -- Installation de ansible
+
 $ sudo apt-get install -y python-pip sshpass
+
 $ sudo -H pip install --upgrade pip
+
 $ sudo -H pip install ansible
 
 -- cloner le depot pour continuer 
@@ -45,9 +48,13 @@ Fichier utile pour la mise à jour système de vagrant et ansible
 
 ++ les playbooks de Ansible 
 cluster.yml code pour initialiser le cluster de façon automatique 
+
 master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
+
 join.yml code pour intégré le cluster 
+
 hosts.yml nos quatres machines virtuelles 
+
 vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
 
 ++ ReadMe
