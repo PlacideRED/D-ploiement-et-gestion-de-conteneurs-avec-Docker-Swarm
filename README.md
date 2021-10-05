@@ -1,10 +1,10 @@
 # Projet-TATA
 
 
-++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 +	Procédure d'automatisation du déploiement et gestion                         +
 +	de conteneurs avec Docker Swarm au sein d’une infrastructure informatique    +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 
 +++++Pré-réquis : 
@@ -62,12 +62,18 @@ Première étape:
 
  Ajouter le box des machines virtuelles de vagrant 
  
+ 
+ 
 $ vagrant box add bento/ubuntu-20.04 --provider virtualbox
+
+
 
 Deuxième étape: 
 Lancer Vagrant pour automatiser votre deploiement, il faut noter que Cette 
 commande exécute le Vagrantfile , qui à son tour  installe Ansible et exécute les playbooks.
 Tout cela prendra quelques minutes. Finalement, notre Docker Swarm Cluster sera configuré et prêt à être utilisé. 
+
+
 
 $ cd swarm-vagrant-ansible
 $ cd Vagrant
@@ -75,7 +81,11 @@ $ vagrant up
 
 Troisième étape:
 Connexion au premier noeud maitre du cluster
+
+
 $ vagrant ssh swarm-maitre-1
 
 Affiche des autres noeuds du cluster une fois dans la machine swarm-maitre-1
+
+
 $ docker node ls
