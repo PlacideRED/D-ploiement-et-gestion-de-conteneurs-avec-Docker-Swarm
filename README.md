@@ -1,8 +1,6 @@
 # Projet-TATA
 
-
-
-## Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docker Swarm au sein d’une infrastructure informatique
+Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docker Swarm au sein d’une infrastructure informatique
 
 
 
