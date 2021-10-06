@@ -1,46 +1,53 @@
 # Projet-TATA
 
 
-++++++ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-+	Procédure d'automatisation du déploiement et gestion                         +
-+	de conteneurs avec Docker Swarm au sein d’une infrastructure informatique    +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+## Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docker Swarm au sein d’une infrastructure informatique    +
 
 
-+++++Pré-réquis : 
 
--- connaissance moyenne en réseau IP
+### Pré-réquis : 
 
--- connaissance moyenne en administration système
+ * connaissance moyenne en réseau IP
 
--- Bonne connaissance en technologies DevSecOps
+ * connaissance moyenne en administration système
 
--- Bonne connaissance en Bash 
+ * Bonne connaissance en technologies DevSecOps
 
--- Bonne connaissance en ruby
+ * Bonne connaissance en Bash 
 
--- connaissance moyenne en developpement d'applicaton
+ * Bonne connaissance en ruby
+
+ * connaissance moyenne en developpement d'applicaton
 
 
-+++++Installation+++++++++++++++++++++
+### Installation+++++++++++++++++++++
 
--- Avoir une machine avec linux avec au moins 8 GO de RAM
+ * Avoir une machine avec linux avec au moins 8 GO de RAM
 
--- Installation de virtualBox ou VMware 
+#### Installation de virtualBox ou VMware 
+
 https://www.informatiweb.net/tutoriels/informatique/virtualisation/virtualbox-installation-sous-linux.html
 
--- Installation de vagrant
+#### Installation de vagrant
 https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
 
--- Installation de ansible
 
+#### Installation de ansible
+
+``
 $ sudo apt-get install -y python-pip sshpass
 
 $ sudo -H pip install --upgrade pip
 
 $ sudo -H pip install ansible
+``
 
--- cloner le depot pour continuer 
+### cloner le depot pour continuer 
+
+``
+$ git clone git@github.com:PlacideRED/Projet-TATA.git
+``
 
 ++ Vagrant 
  -- VagrantFile 
