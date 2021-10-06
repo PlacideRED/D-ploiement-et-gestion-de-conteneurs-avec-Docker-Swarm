@@ -2,7 +2,7 @@
 
 
 
-## Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docker Swarm au sein d’une infrastructure informatique    +
+## Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docker Swarm au sein d’une infrastructure informatique
 
 
 
@@ -21,7 +21,7 @@
  * connaissance moyenne en developpement d'applicaton
 
 
-### Installation+++++++++++++++++++++
+### Installation
 
  * Avoir une machine avec linux avec au moins 8 GO de RAM
 
@@ -35,79 +35,82 @@ https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
 
 #### Installation de ansible
 
-``
+```
 $ sudo apt-get install -y python-pip sshpass
 
 $ sudo -H pip install --upgrade pip
 
 $ sudo -H pip install ansible
-``
+```
 
 ### cloner le depot pour continuer 
 
-``
+```
 $ git clone git@github.com:PlacideRED/Projet-TATA.git
-``
+```
 
-++ Vagrant 
- -- VagrantFile 
+##  Vagrant 
+
+### VagrantFile 
 Fichier dans lequel est renseigné toutes les configurations des machines et outils à installer 
 pour bien mettre en place et faire fonctionner notre environnement virtuel
 
--- ansible.sh 
+### ansible.sh 
+
 Fichier utile pour la mise à jour système de vagrant et ansible 
 
 
-++ les playbooks de Ansible 
-cluster.yml code pour initialiser le cluster de façon automatique 
+## les playbooks de Ansible 
 
-++ master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
+* cluster.yml code pour initialiser le cluster de façon automatique 
 
-++ join.yml code pour intégré le cluster 
+* master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
 
-++ hosts.yml nos quatres machines virtuelles 
+* join.yml code pour intégré le cluster 
 
-++ vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
+* hosts.yml nos quatres machines virtuelles 
 
-++++++ReadMe
-Fichier conteant les différents informations sur les fichiers
- 
+* vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
 
-++++++++++++EXECUTION DES COMMANDES++++++++++++++
+
+## EXECUTION DES COMMANDES
 
 Après le clonage du git on exécute les commandes suivantes :
 
-Première étape:
+### Première étape:
 
  Ajouter le box des machines virtuelles de vagrant 
  
- 
+```
 $ vagrant box add bento/ubuntu-20.04 --provider virtualbox
+```
 
 
+### Deuxième étape: 
 
-Deuxième étape: 
 Lancer Vagrant pour automatiser votre deploiement, il faut noter que Cette 
 commande exécute le Vagrantfile , qui à son tour  installe Ansible et exécute les playbooks.
 
 Tout cela prendra quelques minutes. Finalement, notre Docker Swarm Cluster sera configuré et prêt à être utilisé. 
 
-
+```
 $ cd swarm-vagrant-ansible
 
 $ cd Vagrant
 
 $ vagrant up
 
-Troisième étape:
+```
+
+### Troisième étape:
 Connexion au premier noeud maitre du cluster
 
-
+```
 $ vagrant ssh swarm-maitre-1
 
+```
 
-
-+++++++++++++++++++++ Test Simulation du bon fonctionnement du Cluster++++++++++++
+## Test Simulation du bon fonctionnement du Cluster
 
 
 +++Affichage des noeuds du cluster une fois dans la machine swarm-maitre-1
