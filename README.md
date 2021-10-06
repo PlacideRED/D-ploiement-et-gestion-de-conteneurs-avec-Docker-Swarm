@@ -9,15 +9,10 @@
 ### Pré-réquis : 
 
  * connaissance moyenne en réseau IP
-
  * connaissance moyenne en administration système
-
  * Bonne connaissance en technologies DevSecOps
-
  * Bonne connaissance en Bash 
-
  * Bonne connaissance en ruby
-
  * connaissance moyenne en developpement d'applicaton
 
 
@@ -31,23 +26,29 @@
 
 ```
 $ wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Ubuntu~eoan_amd64.deb
-$ sudo dpkg -i virtualbox-6.1_6.1.26-145957..
+$ sudo dpkg -i virtualbox-6.1_6.1.26-145957~Ubuntu~eoan_amd64.deb
 ```
 
 
 #### Installation de vagrant
 
-https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
+##### Ubuntu 20.04
+
+```
+$ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+
+$ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+
+$ sudo apt-get update && sudo apt-get install vagrant
+```
 
 
 #### Installation de ansible
 
 ```
-$ sudo apt-get install -y python-pip sshpass
+$ sudo apt-get install -y python3 python3-pip sshpass
 
-$ sudo -H pip install --upgrade pip
-
-$ sudo -H pip install ansible
+$ sudo -H pip3 install ansible
 ```
 
 ### cloner le depot pour continuer 
@@ -55,29 +56,6 @@ $ sudo -H pip install ansible
 ```
 $ git clone git@github.com:PlacideRED/Projet-TATA.git
 ```
-
-##  Vagrant 
-
-### VagrantFile 
-Fichier dans lequel est renseigné toutes les configurations des machines et outils à installer 
-pour bien mettre en place et faire fonctionner notre environnement virtuel
-
-### ansible.sh 
-
-Fichier utile pour la mise à jour système de vagrant et ansible 
-
-
-## les playbooks de Ansible 
-
-* cluster.yml code pour initialiser le cluster de façon automatique 
-
-* master.yml fichier contenant le code pour le choix de la machine maitre de façon automatique
-
-* join.yml code pour intégré le cluster 
-
-* hosts.yml nos quatres machines virtuelles 
-
-* vars.yml les différents logiciels utilitaires à utiliser dans nos machines virtuellles 
 
 
 ## EXECUTION DES COMMANDES
@@ -120,39 +98,63 @@ $ vagrant ssh swarm-maitre-1
 ## Test Simulation du bon fonctionnement du Cluster
 
 
-+++Affichage des noeuds du cluster une fois dans la machine swarm-maitre-1
+### Affichage des noeuds du cluster une fois dans la machine swarm-maitre-1
+
+```
 
 $ docker node ls
 
-++++Création des services 
+```
 
+
+### Création des services 
+
+```
 $ docker service create --replicas 1 --name  <NOM SERVICE>  --publish 80:80 
+```
 
 
-++++Afficher les différents services crés sur les machines 
+### Afficher les différents services crés sur les machines 
 
+
+```
 $ docker service ls 
 
-+++Afficher les informations concernant un service
+```
 
+### Afficher les informations concernant un service
+
+```
 $ docker service ps  <NOM SERVICE>
+```
  
-++++Démarrage des différents services 
 
+### Démarrage des différents services 
+
+```
 $ docker service run
+```
  
-+++Créer une panne en faisant tomber un noeud du cluster (a exécuter sur la machine à faire tomber )
- 
- $ docker swarm leave
- 
- +++Affichage des noeuds du cluster 
- 
-$ docker node ls
+### Créer une panne en faisant tomber un noeud du cluster (a exécuter sur la machine à faire tomber )
 
- +++Inspecter un nœud
+``` 
+ $ docker swarm leave
+```
+
+### Affichage des noeuds du cluster 
  
+```
+$ docker node ls
+```
+
+### Inspecter un nœud
+ 
+```
 docker node inspect <NOM NOEUD> 
+```
  
- ++++Supprimer un noeud 
- 
+### Supprimer un noeud 
+
+```
  $ docker node rm 
+```
