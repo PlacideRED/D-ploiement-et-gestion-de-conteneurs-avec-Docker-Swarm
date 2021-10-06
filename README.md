@@ -22,11 +22,21 @@ Procédure d'automatisation du déploiement et gestion  de conteneurs avec Docke
 
 ##### Ubuntu 20.04
 
+
 ```
 $ wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Ubuntu~eoan_amd64.deb
 $ sudo dpkg -i virtualbox-6.1_6.1.26-145957~Ubuntu~eoan_amd64.deb
 ```
 
+Si vous avez des problèmes vous pouvez installer les packages suivants:
+
+```
+$ sudo apt install libgl1 libopus0 libqt5core5a libqt5gui5 libqt5gui5-gles libqt5opengl5 libqt5printsupport5 libqt5widgets5 libqt5x11extras5 libsdl1.2debian libvpx6 libxcursor1 libxt6 python3 
+
+$ sudo apt --fix-broken install
+
+$ sudo apt install gcc make perl
+```
 
 #### Installation de vagrant
 
@@ -38,6 +48,12 @@ $ curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
 $ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
 
 $ sudo apt-get update && sudo apt-get install vagrant
+```
+
+Si vous avez quelques problèmes essayez les commandes suivantes:
+
+```
+$ sudo apt install software-properties-common
 ```
 
 
