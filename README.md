@@ -27,9 +27,16 @@
 
 #### Installation de virtualBox ou VMware 
 
-https://www.informatiweb.net/tutoriels/informatique/virtualisation/virtualbox-installation-sous-linux.html
+##### Ubuntu 20.04
+
+```
+$ wget https://download.virtualbox.org/virtualbox/6.1.26/virtualbox-6.1_6.1.26-145957~Ubuntu~eoan_amd64.deb
+$ sudo dpkg -i virtualbox-6.1_6.1.26-145957..
+```
+
 
 #### Installation de vagrant
+
 https://linuxize.com/post/how-to-install-vagrant-on-ubuntu-18-04/
 
 
