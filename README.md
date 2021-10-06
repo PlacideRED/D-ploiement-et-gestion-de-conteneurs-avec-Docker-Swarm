@@ -98,7 +98,44 @@ Connexion au premier noeud maitre du cluster
 
 $ vagrant ssh swarm-maitre-1
 
-Affiche des autres noeuds du cluster une fois dans la machine swarm-maitre-1
 
+
++++++++++++++++++++++ Test Simulation du bon fonctionnement du Cluster++++++++++++
+
+
++++Affichage des noeuds du cluster une fois dans la machine swarm-maitre-1
 
 $ docker node ls
+
+++++Création des services 
+
+$ docker service create --replicas 1 --name  <NOM SERVICE>  --publish 80:80 
+
+
+++++Afficher les différents services crés sur les machines 
+
+$ docker service ls 
+
++++Afficher les informations concernant un service
+
+$ docker service ps  <NOM SERVICE>
+ 
+++++Démarrage des différents services 
+
+$ docker service run
+ 
++++Créer une panne en faisant tomber un noeud du cluster (a exécuter sur la machine à faire tomber )
+ 
+ $ docker swarm leave
+ 
+ +++Affichage des noeuds du cluster 
+ 
+$ docker node ls
+
+ +++Inspecter un nœud
+ 
+docker node inspect <NOM NOEUD> 
+ 
+ ++++Supprimer un noeud 
+ 
+ $ docker node rm 
